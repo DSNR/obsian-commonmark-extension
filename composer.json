@@ -1,0 +1,26 @@
+{
+    "name": "dsnr/obsidian-commonmark-extension",
+    "description": "A league/commonmark extension to parse obsidian markdown to html",
+    "keywords": [
+        "obsidian",
+        "commonmark-mark-extension"
+    ],
+    "require": {
+        "php": "^8.0",
+        "league/commonmark": "^2.4",
+        "laravel/helpers": "^1.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dsnr\\ObsidianCommonmarkExtension\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Scott Hellings",
+            "email": "scott@dsnr.co.uk"
+        }
+    ],
+    "minimum-stability": "stable"
+}
