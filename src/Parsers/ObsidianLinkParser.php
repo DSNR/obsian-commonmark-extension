@@ -23,11 +23,12 @@ class ObsidianLinkParser implements InlineParserInterface
         $cursor->advanceBy($inlineContext->getFullMatchLength());
 
         $subMatches  = $inlineContext->getSubMatches();
-        $docsVersion = request()->segment(2);
+        $docsVersion = !empty(request()->segments()) ?? 'docs/' . request()->segment(2) . '/';
         $linkName    = $subMatches[0];
         $linkAnchor  = $subMatches[1] ?? null;
         $linkText    = $subMatches[2] ?? $linkName ?: $linkAnchor;
-        $linkUrl     = url('/docs/' . $docsVersion . '/' .  Str::slug($linkName));
+        $linkUrl     = url( $docsVersion  .  Str::slug($linkName));
+
 
         if ($linkAnchor) {
             $linkUrl .= '#' . $linkAnchor;
